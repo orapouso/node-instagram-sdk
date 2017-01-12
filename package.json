@@ -1,0 +1,24 @@
+{
+  "name": "node-instagram-sdk",
+  "version": "0.0.1",
+  "description": "Instagram API sdk for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orapouso/node-instagram-sdk.git"
+  },
+  "keywords": [
+    "instagram",
+    "sdk",
+    "node"
+  ],
+  "author": "Rafael Raposo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orapouso/node-instagram-sdk/issues"
+  },
+  "homepage": "https://github.com/orapouso/node-instagram-sdk#readme"
+}
