@@ -1,25 +1,24 @@
-const db = require('level')('access_tokens.db')
-const debug = require('debug')('insta:main')
-
-const server = require('./server')()
+// const db = require('level')('access_tokens.db')
+// const debug = require('debug')('insta:main')
+// 
+// const server = require('./server')()
 const api = require('./api')
 const explore = require('./explore')
 
-server.on('access_token', (access) => {
-  debug('access')
-  db.put(access.user.username, JSON.stringify(access), () => {
-    debug('access saved', access)
-  })
-})
-
-explore.tags('errejota')
-  .then((response) => {
-    let json = JSON.parse(response)
-    debug('explore', JSON.stringify(json, null, 2))
-    json.tag.media.nodes.forEach((node) => {
-      debug(node.code)
-    })
-  })
+// server.on('access_token', (access) => {
+//   debug('access')
+//   db.put(access.user.username, JSON.stringify(access), () => {
+//     debug('access saved', access)
+//   })
+// })
+// 
+// explore.tags('errejota')
+//   .then((json) => {
+//     debug('explore', JSON.stringify(json, null, 2))
+//     json.media.nodes.forEach((node) => {
+//       debug(node.code)
+//     })
+//   })
   
 module.exports = {
   api: api,
