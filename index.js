@@ -1,6 +1,6 @@
 // const db = require('level')('access_tokens.db')
-// const debug = require('debug')('insta:main')
-// 
+//const debug = require('debug')('insta:main')
+//
 // const server = require('./server')()
 const api = require('./api')
 const explore = require('./explore')
@@ -11,7 +11,8 @@ const explore = require('./explore')
 //     debug('access saved', access)
 //   })
 // })
-// 
+//
+
 // explore.tags('errejota')
 //   .then((json) => {
 //     debug('explore', JSON.stringify(json, null, 2))
@@ -19,7 +20,15 @@ const explore = require('./explore')
 //       debug(node.code)
 //     })
 //   })
-  
+
+// explore.location('215606374', 'Praia da Barra da Tijuca')
+//   .then((json) => {
+//     debug('explore', JSON.stringify(json, null, 2))
+//     json.media.nodes.forEach((node) => {
+//       debug(node.code)
+//     })
+//   })
+
 module.exports = {
   api: api,
   explore: explore
@@ -27,7 +36,7 @@ module.exports = {
 
 // db.get('orapouso', (err, access) => {
 //   let accessToken = JSON.parse(access).access_token
-//   
+//
 //   api.tags.recent(accessToken, 'copacabana', {count: 5})
 //     .then((response) => {
 //       debug('teste response', response)
@@ -52,7 +61,7 @@ module.exports = {
 //     'Cache-Control': 'no-cache'
 //   }
 // }
-// 
+//
 // require('request')(options, (err, res, body) => {
 //   let json = JSON.parse(body)
 //   console.log(JSON.stringify(json, null, 2))

@@ -12,20 +12,20 @@ module.exports = {
 function apiRequest(accessToken, url, params={}) {
   if (!accessToken) { return Promise.reject(new Error('no access token'))}
   if (!url) { return Promise.reject(new Error('no url'))}
-    
+
   url = API_BASE_URI + url
-    
+
   params.access_token = accessToken
-  
+
   return makeRequest(url, params)
 }
 
 function exploreRequest(url, params={}) {
   if (!url) { return Promise.reject(new Error('no url'))}
-  
+
   url = EXPLORE_BASE_URI + url
   params.__a = 1
-  
+
   return makeRequest(url, params)
 }
 
@@ -36,12 +36,12 @@ function makeRequest(url, params={}) {
       url: url,
       qs: params
     }
-  
+
     debug('request', options)
     request(options, (err, response, body) => {
       if (err) {return rej(err)}
       if (response.statusCode >= 400) {return rej(new Error(response.statusCode + ': ' + body))}
-      
+
       res(body)
     })
   })
