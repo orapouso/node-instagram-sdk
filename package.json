@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/orapouso/node-instagram-sdk/issues"
   },
-  "homepage": "https://github.com/orapouso/node-instagram-sdk#readme"
+  "homepage": "https://github.com/orapouso/node-instagram-sdk#readme",
+  "dependencies": {
+    "debug": "^2.6.0",
+    "level": "^1.5.0",
+    "request": "^2.79.0"
+  }
 }
