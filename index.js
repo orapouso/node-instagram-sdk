@@ -20,6 +20,11 @@ explore.tags('errejota')
       debug(node.code)
     })
   })
+  
+module.exports = {
+  api: api,
+  explore: explore
+}
 
 // db.get('orapouso', (err, access) => {
 //   let accessToken = JSON.parse(access).access_token
