@@ -24,6 +24,7 @@
   "dependencies": {
     "debug": "^2.6.0",
     "level": "^1.5.0",
+    "localtunnel": "^1.8.3",
     "request": "^2.79.0"
   }
 }
