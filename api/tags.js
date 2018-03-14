@@ -13,11 +13,10 @@ function name (accessToken, name) {
   return util.apiRequest(accessToken, uri)
 }
 
-function recentMedia(accessToken, name, {minId: minId, maxId: maxId, count: count=20}) {
+function recentMedia(accessToken, name, {minId, maxId, count}={count: count=20}) {
   let uri = `/tags/${name}/media/recent`
   let params = {
-    count: count,
-    access_token: accessToken
+    count: count
   }
   
   if (minId) {

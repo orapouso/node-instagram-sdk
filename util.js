@@ -11,7 +11,6 @@ module.exports = {
 
 function apiRequest(accessToken, url, params={}) {
   if (!accessToken) { return Promise.reject(new Error('no access token'))}
-  if (!url) { return Promise.reject(new Error('no url'))}
 
   url = API_BASE_URI + url
 
@@ -21,7 +20,6 @@ function apiRequest(accessToken, url, params={}) {
 }
 
 function exploreRequest(url, params={}) {
-  if (!url) { return Promise.reject(new Error('no url'))}
 
   url = EXPLORE_BASE_URI + url
   params.__a = 1
@@ -31,6 +29,8 @@ function exploreRequest(url, params={}) {
 
 function makeRequest(url, params={}) {
   return new Promise((res, rej) => {
+    if (!url) { return rej(new Error('no url'))}
+
     let options = {
       method: 'get',
       url: url,
